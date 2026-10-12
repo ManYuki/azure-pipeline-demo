@@ -1,0 +1,7 @@
+# Compiled application binary
+app
+
+# IDE and editor configurations
+.vscode/
+.idea/
+*.swp

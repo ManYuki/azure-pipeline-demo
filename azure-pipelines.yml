@@ -21,3 +21,10 @@ steps:
     curl -s http://localhost:8080 | grep "Azure DevOps Pipeline Demo is running!"
     kill $PID
   displayName: 'Smoke Test Application'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/app'
+    ArtifactName: 'GoServiceArtifact'
+    publishLocation: 'Container'
+  displayName: 'Publish Compiled Binary Artifact'
