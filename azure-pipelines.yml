@@ -1,0 +1,23 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: GoTool@0
+  inputs:
+    version: '1.22'
+  displayName: 'Install Go'
+
+- script: |
+    go build -v -o app .
+  displayName: 'Build Go Microservice'
+
+- script: |
+    ./app &
+    PID=$!
+    sleep 2
+    curl -s http://localhost:8080 | grep "Azure DevOps Pipeline Demo is running!"
+    kill $PID
+  displayName: 'Smoke Test Application'
