@@ -35,8 +35,10 @@ This repository contains a lightweight Go web service backed by a fully automate
 .
 ├── main.go               # Minimalist Go web service entrypoint
 ├── go.mod                # Go module dependency management
+├── .gitignore            # Excludes compiled binaries and IDE configurations
 ├── azure-pipelines.yml   # Azure DevOps CI pipeline configuration matrix
-└── README.md             # System architecture and operational documentation
+├── README.md             # System architecture and operational documentation
+└── screenshots/          # Project documentation and execution visuals
 ```
 
 ## Step-by-Step Implementation Process
